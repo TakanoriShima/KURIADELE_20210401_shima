@@ -22,7 +22,7 @@
         $id = $_GET['id'];
     }
     // newsの情報取得
-    $news = NewsDAO::get_news_id($id);
+    // $news = NewsDAO::get_news_id($id);
     // var_dump($news);
 ?>
 
@@ -79,8 +79,8 @@
                 <label class='col-lg-4 col-form-label'>日付<br>News</label>
 
                     <div class='col-lg-4 col-12'>
-                        <input type='date' name='days' class='form-control' placeholder='<?= $news->days ?>'/>
-                        <input type='text' name='news' class='form-control' placeholder='<?= $news->news ?>'/>
+                        <input type='date' name='days' class='form-control' value='<?= $news->days ?>'/>
+                        <input type='text' name='news' class='form-control' value='<?= $news->news ?>'/>
                     </div>
             </div>
         

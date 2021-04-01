@@ -13,7 +13,7 @@
     }
     // newsの情報取得
     $news = NewsDAO::get_news_id($id);
-    // var_dump($news);
+    var_dump($news);
 ?>
 
 <!doctype html>
@@ -75,8 +75,7 @@
             <h4 class='customer'>KURIADELEnews</h4>
             <h3 class='top_d'>KURIADELE最新ニュース</h1>
             <h4 class='top_e'><?= $news->days ?>        <?= $news->news ?></h4>
-            
-            
+
         </div>
 
 

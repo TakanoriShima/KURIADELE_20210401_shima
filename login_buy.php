@@ -15,7 +15,7 @@
     }
     // 登録した商品情報をDAOからid情報で取得
     $item = ItemDAO::get_item_by_id($id);
-    var_dump($item);
+    // var_dump($item);
     
     // ログイン者の情報取得
     $login_customer = $_SESSION['login_customer'];

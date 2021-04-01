@@ -23,6 +23,10 @@
     // newsの情報取得
     $news = NewsDAO::get_news_id($id);
     // var_dump($news);
+    // flash_message をセッションより取得
+    $flash_message = $_SESSION['flash_message'];
+    $_SESSION['flash_message'] = null;
+    
 ?>
 
 
@@ -71,20 +75,18 @@
             <div class='top_a'>満足の極みへ</div>
             <div class='top_b'><img src='camera.jpg' alt='camera'></img></div>
         </div>
-        
+  
+        <!--flash_message表示-->
+        <?php if($flash_message !== null): ?>
+        <p><?= $flash_message ?></p>
+        <?php endif; ?>
 
-  
-  
-  
-  
-  
         <?php if($login_message !== null): ?>
             <p><?= $login_message ?></p>
         <?php endif; ?>
         <div class='top_2'>
             <h4 class='customer'>取扱商品</h4>
             <div class='top_c'><a href='login_product.php'><img src='camera_3.jpg' alt='camera'></img></a></div>
-            
         </div>
         
         

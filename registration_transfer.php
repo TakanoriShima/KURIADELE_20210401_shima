@@ -10,6 +10,7 @@
     $account = $_POST['account'];
     $NO = $_POST['NO'];
     $kana_name = $_POST['kana_name'];
+    // print $kana_name;
     // Bank命の誕生
     $bank = new Bank($bank_name, $branch_name, $account, $NO, $kana_name);
     

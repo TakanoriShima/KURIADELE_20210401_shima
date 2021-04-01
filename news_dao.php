@@ -39,15 +39,12 @@
                 // データベースに接続する神様取得
                 $pdo = self::get_connection();
                 // INSERT文を実行する準備（名前、年齢はわざとあやふやにしておく)
-                $stmt = $pdo -> prepare("INSERT INTO news (days, news) VALUES (:days, :news)");
-                
+                $stmt = $pdo -> prepare("INSERT INTO news(days, news) VALUES(:days, :news)");
                 // バインド処理（あやふやだった名前、年齢を実データで埋める）
-                $stmt->bindParam(':days', $news->days, PDO::PARAM_INT);
+                $stmt->bindParam(':days', $news->days, PDO::PARAM_STR);
                 $stmt->bindParam(':news', $news->news, PDO::PARAM_STR);
-                
                 // INSERT文本番実行
                 $stmt->execute();
-    
                 return "newsが登録完了しました";
                 
             }catch(PDOException $e){
